@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" routerLink="/">Star Wars</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/characters">List of characters</a>
+      </li>
+    </ul>
+    <form class="form-inline" #form="ngForm" (ngSubmit)="search()">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="term" class="sr-only">Search term: </label>
+        <input type="text" class="form-control" id="term" placeholder="Search term" name="term" #term="ngModel" [(ngModel)]="searchTerm">
+      </div>
+      <button type="submit" class="btn btn-success mb-2" [disabled]="!this.searchTerm">Search</button>
+    </form>
+  </div>
+</nav>
+<main role="main" class="container">
+  <router-outlet></router-outlet>
+</main>

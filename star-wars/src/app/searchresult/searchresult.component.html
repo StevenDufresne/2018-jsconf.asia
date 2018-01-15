@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">Search results</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="alert alert-success" role="alert" *ngIf="results.length !== 0">
+    Search results for query: <strong>{{ query }}</strong>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="results.length === 0">
+    No results.
+  </div>
+  <div class="list-group" *ngIf="results.length !== 0">
+    <a [routerLink]="[result.uri]" (click)="activeModal.close()" class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let result of results">
+      <div class="d-flex w-100 justify-content-between">
+        <h6 class="mb-1">{{ result.content.name }}</h6>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close()">Close</button>
+</div>

@@ -1,0 +1,10 @@
+<div class="card" *ngIf="character">
+  <div class="card-body">
+    <h4 class="card-title">{{ character.content.name }}</h4>
+    <p class="card-text"><small class="text-muted"><span *ngIf="character.content.homeworld"><strong>Born:</strong> {{ character.content.homeworld}}</span> <span *ngIf="character.content.weapon">| <strong>Weapon:</strong> {{ character.content.weapon }}</span></small></p>
+    <p class="card-text">{{ character.content.bio }}</p>
+  </div>
+  <div class="text-center">
+    <img class="sized" src="{{ photo }}" alt="{{ character.content.name }}">
+  </div>
+</div>
