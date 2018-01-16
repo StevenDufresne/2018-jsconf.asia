@@ -7,7 +7,6 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./searchresult.component.css']
 })
 export class SearchresultComponent implements OnInit {
-  @Input() name;
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {

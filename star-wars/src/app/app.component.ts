@@ -12,11 +12,10 @@ export class AppComponent {
   searchTerm;
 
   search() {
-    console.log('called');
-    console.log(this.searchTerm);
     this.cs.search(this.searchTerm).subscribe(response => {
       const modalRef = this.modalService.open(SearchresultComponent);
       modalRef.componentInstance.results = response;
+      modalRef.componentInstance.query = this.searchTerm;
     });
   }
 }

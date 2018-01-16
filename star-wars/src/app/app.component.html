@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" routerLink="/">Star Wars</a>
+  <a class="navbar-brand" routerLink="/"><div class="star-wars-icon"></div></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-        <a class="nav-link" routerLink="/">Home</a>
+        <a class="nav-link" routerLink="/"><i class="fa fa-home" [ngClass]="{'white': routerLinkActive}"></i> Home</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/characters">List of characters</a>
+        <a class="nav-link" routerLink="/characters"><i class="fa fa-user" [ngClass]="{'white': routerLinkActive}"></i> List of characters</a>
       </li>
     </ul>
     <form class="form-inline" #form="ngForm" (ngSubmit)="search()">
