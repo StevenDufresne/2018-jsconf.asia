@@ -50,7 +50,6 @@ server.get('/image/:name', (request, response) => {
 
 server.post('/api/search/', (request, response) => {
   const term = request.body;
-  console.log(term);
   db.documents.query(
     qb.where(
       qb.collection('characters'),
