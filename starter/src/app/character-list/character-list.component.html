@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor='let character of characters'>
+    <a routerLink='{{character.uri}}'>
+      {{character.content.name}}
+    </a>
+  </li>
+</ul>

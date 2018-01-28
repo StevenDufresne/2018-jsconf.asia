@@ -1,0 +1,15 @@
+ <form class="form-inline" #form="ngForm" (ngSubmit)="search()">
+  <div class="form-group mx-sm-3 mb-2">
+      <label for="term" class="sr-only">Search term: </label>
+      <input type="text" class="form-control" id="term" placeholder="Search term" name="term" #term="ngModel" [(ngModel)]="searchTerm">
+    </div>
+    <button type="submit" class="btn btn-success mb-2">Search</button>
+  </form>
+
+  <div *ngIf="results">
+    <ul>
+      <li *ngFor="let p of results">
+        {{p.content.name}}
+      </li>
+    </ul>
+  </div>

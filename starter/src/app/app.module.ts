@@ -4,17 +4,33 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CharacterListComponent } from './character-list/character-list.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { CharacterDisplayComponent } from './character-display/character-display.component';
+
+import { CharacterService } from './character.service';
+import { SearchComponent } from './search/search.component';
+
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent,
+    CharacterListComponent,
+    CharacterDisplayComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
